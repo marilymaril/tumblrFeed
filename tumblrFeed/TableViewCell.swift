@@ -13,14 +13,17 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var cell: TableViewCell!
     @IBOutlet weak var PhotoImageView: UIImageView!
     
+    var photo: String!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        
         // Initialization code
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as! TableViewCell
-        
         // Configure YourCustomCell using the outlets that you've defined.
         
         return cell
@@ -28,8 +31,6 @@ class TableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

@@ -1,47 +1,41 @@
 
-# Lab 1 - *Name of App Here*
+# Lab 1 - **Tumblr Feed**
 
-**Name of your app** is a photo browsing app using the [The Tumblr API](https://www.tumblr.com/docs/en/api/v2#posts).
+**Tumblr Feed** is a photo browsing app using the [The Tumblr API](https://www.tumblr.com/docs/en/api/v2#posts).
 
-Time spent: **X** hours spent in total
+Time spent: **4** hours spent in total
 
 ## User Stories
 
 The following **required** user stories are complete:
 
-- [ ] User can scroll through a feed of images returned from the Tumblr API (5pts)
-
-The following **stretch** user stories are implemented:
-
-- [ ] User sees an alert when there's a networking error (+1pt)
-- [ ] While poster is being fetched, user see's a placeholder image (+1pt)
-- [ ] User sees image transition for images coming from network, not when it is loaded from cache (+1pt)
-- [ ] Customize the selection effect of the cell (+1pt)
+- [X] User can scroll through a feed of images returned from the Tumblr API (5pts)
 
 The following **additional** user stories are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality! (+1-3pts)
+- [X] Added Pull to Refresh  (+1-3pts)
+- [X] Added a second ViewController that fetched displayed the caption and photo of the selected post
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. I would like to see how my peers implemented the sizing of the table cells since it wasn't explicitly stated in the lab
+2. I would also like to discuss what other features would be good to add to the app
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://imgur.com/pdRTRNG' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+During the creation of this app, I found it very difficult to figure out how to change the table cell size. I really wanted them to be square and to have the image cropped in order to extend past the boundaries of the cell width, but I wasn't able to figure out how to.
 
 ## License
 
-Copyright [yyyy] [name of copyright owner]
+Copyright [2018] Marilyn Florek
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

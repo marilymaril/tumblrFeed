@@ -22,6 +22,8 @@ extension String {
     }
 }
 
+
+
 class DetailViewController: UIViewController {
 
     var index: Int!
@@ -42,7 +44,8 @@ class DetailViewController: UIViewController {
             let url = URL(string: urlString)
             postPhoto.af_setImage(withURL: url!)
             postCaption.text = ("\(content?.htmlToString ?? "unknown")")
-//            postCaption.text += content?.htmlToString
+            
+            postPhoto.isUserInteractionEnabled = true
         }
         
         if let trail = post["trail"] as? [[String:Any]] {
@@ -51,14 +54,18 @@ class DetailViewController: UIViewController {
             let name = blog["name"] as! String
             postSource.text = name
         }
-        
-        
-        print(post)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let fullScreenViewController = segue.destination as! FullScreenPhotoViewController
+        
+        fullScreenViewController.image = postPhoto.image!
     }
 
 }

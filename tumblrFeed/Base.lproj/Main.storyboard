@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -70,30 +71,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6OL-jm-zbU">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vSg-y0-TSb">
+                                <rect key="frame" x="0.0" y="64" width="375" height="266"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vSg-y0-TSb">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="266"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <textView multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JXV-Ty-FyV">
-                                        <rect key="frame" x="21" y="294" width="333" height="309"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOe-hS-gCE">
-                                        <rect key="frame" x="21" y="276" width="333" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="12"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </scrollView>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="hpl-tL-CBF" appends="YES" id="Wa1-eK-IQT"/>
+                                </connections>
+                            </imageView>
+                            <textView multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JXV-Ty-FyV">
+                                <rect key="frame" x="26" y="358" width="333" height="309"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOe-hS-gCE">
+                                <rect key="frame" x="21" y="338" width="333" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Dea-i9-fTX"/>
@@ -106,8 +105,68 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UJs-aA-K2f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="hpl-tL-CBF">
+                    <connections>
+                        <segue destination="Q0U-gU-1c6" kind="presentation" id="dje-8F-S0v"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1100" y="-73.313343328335833"/>
+        </scene>
+        <!--Full Screen Photo View Controller-->
+        <scene sceneID="bXL-C5-mkk">
+            <objects>
+                <viewController id="Q0U-gU-1c6" customClass="FullScreenPhotoViewController" customModule="tumblrFeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Osc-N2-m4y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="5" translatesAutoresizingMaskIntoConstraints="NO" id="XTn-aT-hKa">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xIY-ef-yxI">
+                                        <rect key="frame" x="20" y="28" width="39" height="30"/>
+                                        <state key="normal" title="Close"/>
+                                        <connections>
+                                            <action selector="closeModal:" destination="Q0U-gU-1c6" eventType="touchUpInside" id="x7A-m9-DA4"/>
+                                        </connections>
+                                    </button>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3hm-T5-4vH">
+                                        <rect key="frame" x="0.0" y="66" width="377" height="266"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="266" id="1zw-Vm-fiN"/>
+                                            <constraint firstAttribute="width" constant="377" id="Gbg-En-9G8"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="xIY-ef-yxI" firstAttribute="top" secondItem="XTn-aT-hKa" secondAttribute="topMargin" id="B60-yZ-D3z"/>
+                                    <constraint firstItem="3hm-T5-4vH" firstAttribute="top" secondItem="xIY-ef-yxI" secondAttribute="bottom" constant="8" symbolic="YES" id="Gud-nc-fBa"/>
+                                    <constraint firstAttribute="trailing" secondItem="3hm-T5-4vH" secondAttribute="trailing" constant="-2" id="T1u-Yr-es9"/>
+                                    <constraint firstItem="xIY-ef-yxI" firstAttribute="leading" secondItem="XTn-aT-hKa" secondAttribute="leading" constant="20" id="T4n-eg-4ax"/>
+                                    <constraint firstAttribute="bottom" secondItem="3hm-T5-4vH" secondAttribute="bottom" constant="335" id="gzD-P0-0Li"/>
+                                    <constraint firstItem="3hm-T5-4vH" firstAttribute="leading" secondItem="XTn-aT-hKa" secondAttribute="leading" id="o5f-uR-UPn"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XTn-aT-hKa" firstAttribute="top" secondItem="Osc-N2-m4y" secondAttribute="top" id="0jm-8V-zNZ"/>
+                            <constraint firstAttribute="trailing" secondItem="XTn-aT-hKa" secondAttribute="trailing" id="HjP-hK-F7C"/>
+                            <constraint firstItem="XTn-aT-hKa" firstAttribute="bottom" secondItem="BDY-Mc-dEl" secondAttribute="bottom" id="l3k-wr-mSV"/>
+                            <constraint firstItem="XTn-aT-hKa" firstAttribute="leading" secondItem="Osc-N2-m4y" secondAttribute="leading" id="rb1-bM-53N"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BDY-Mc-dEl"/>
+                    </view>
+                    <connections>
+                        <outlet property="closeBtn" destination="xIY-ef-yxI" id="9iV-WH-nXF"/>
+                        <outlet property="imageView" destination="3hm-T5-4vH" id="Wgt-g7-S0Q"/>
+                        <outlet property="scrollView" destination="XTn-aT-hKa" id="fyO-5e-qaM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QNF-pZ-xEn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1901.5999999999999" y="-73.313343328335833"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4tT-xR-WTx">
